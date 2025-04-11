@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Europe Map</title>
+    <link href="Map Design.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Interactive Map of Europe</h1>
+      <a href="" id="href">
+        <button onclick="budget()" class="nav-button">Go to info Page</button>
+      </a>
+      <h2>Country Information</h2>
+
+      <div id="infoBox" class="editable"></div>
+
+      <div class="map-container">
+        <img src="europe map.jpg" alt="Europe Map" width="600" />
+
+        <button
+          class="country-button"
+          style="top: 90%; left: 50%"
+          onclick="showInfo('Greece')"
+        >
+          Greece
+        </button>
+        <button
+          class="country-button"
+          style="top: 85%; left: 40%"
+          onclick="showInfo('Italy')"
+        >
+          Italy
+        </button>
+        <button
+          class="country-button"
+          style="top: 70%; left: 38%"
+          onclick="showInfo('Austria')"
+        >
+          Austria
+        </button>
+        <button
+          class="country-button"
+          style="top: 70%; left: 15%"
+          onclick="showInfo('Switzerland')"
+        >
+          Switzerland
+        </button>
+        <button
+          class="country-button"
+          style="top: 90%; left: 13%"
+          onclick="showInfo('Spain')"
+        >
+          Spain
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function budget() {
+        window.location.href = "Budget Page2.html";
+      }
+
+      let c_area;
+      let c_sites;
+      let c_currency;
+      let c_info;
+      function showInfo(country) {
+        if (country == "Greece") {
+          c_area = "131,957 km²";
+          c_sites = "Athens, Volos";
+          c_currency = "Euro";
+          c_info = "greece";
+        } else if (country == "Italy") {
+          c_area = "302,073 km²";
+          c_sites = "Rome, Milan";
+          c_currency = "Euro";
+          c_info = "italy";
+        } else if (country == "Austria") {
+          c_area = "83,871 km²";
+          c_sites = "Vienna, Graz";
+          c_currency = "Euro";
+          c_info = "austria";
+        } else if (country == "Switzerland") {
+          c_area = "41,285 km²";
+          c_sites = "Bern, Zurich";
+          c_currency = "Franc";
+          c_info = "switzerland";
+        } else if (country == "Spain") {
+          c_area = "506,030 km²";
+          c_sites = "Madrid, Barcelona";
+          c_currency = "Euro";
+          c_info = "spain";
+        }
+        document.getElementById("href").href = `${c_info}.html`;
+        document.getElementById(
+          "infoBox"
+        ).innerHTML = `<strong>The country is:</strong> ${country}<br>
+                 <strong>Area:</strong> ${c_area}<br>
+                 <strong>Sites:</strong> ${c_sites}<br>
+                 <strong>Currency:</strong> ${c_currency}`;
+        return c_info;
+      }
+    </script>
+  </body>
+</html>

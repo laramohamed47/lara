@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        color: #333;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: #34495e;
+        margin-bottom: 1rem;
+      }
+
+      .sub-header {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn-link {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-link:hover {
+        background-color: #34495e;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+        .sub-header {
+          font-size: 1rem;
+        }
+        .btn-link {
+          font-size: 1rem;
+          padding: 0.6rem 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Home Page</h1>
+    <h2>Welcome to our travelling site</h2>
+    <div class="sub-header" id="message2"></div>
+    <a class="btn-link" id="message1" href="Europe Map.html"></a>
+
+    <script>
+      const msg1 = "Discover the world";
+      const msg2 = "Join us in an amazing adventure";
+
+      document.getElementById("message1").innerText = msg1;
+      document.getElementById("message2").innerText = msg2;
+
+      alert("Did you know that the first-ever JavaScript code was written in 1995?");
+      let stuname = prompt("Tell us your name !!");
+      alert("Congratulations " + stuname + ", travelling is a very good choice!");
+    </script>
+  </body>
+</html>
