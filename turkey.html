@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discover Turkey</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      color: #333;
+      text-align: center;
+    }
+
+    .btn-checkout {
+      display: block;
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-checkout:hover {
+      background-color: #34495e;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .card-body p {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .card-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        width: 45%;
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .card {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header class="header">
+    <h1>Welcome to Turkey</h1>
+    <p>Explore iconic landmarks and traditional foods</p>
+    <a href="turkeybudget.html" class="btn-checkout">Go to Checkout</a>
+  </header>
+
+  <section>
+    <h2>Traditional Turkish Foods</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="lahmacun.jpg" alt="Lahmacun">
+        <div class="card-body">
+          <h3>Lahmacun</h3>
+          <p>A flatbread, often called Turkish pizza, topped with minced meat, tomato paste, garlic, and spices.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="doner.jpg" alt="Doner Kebab">
+        <div class="card-body">
+          <h3>Doner Kebab</h3>
+          <p>A popular dish made from stacked layers of lamb or beef, served in crusty bread with salad and sauce.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="baklava.jpg" alt="Baklava">
+        <div class="card-body">
+          <h3>Baklava</h3>
+          <p>A sweet pastry with filo layers, ground nuts, and honey syrup. A perfect Turkish dessert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Famous Turkish Landmarks</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="topkapi.jpg" alt="Topkapi Palace">
+        <div class="card-body">
+          <h3>Topkapi Palace</h3>
+          <p>Once the primary residence of the Ottoman sultans, a historic palace in Istanbul with stunning gardens and artifacts.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="blue.jpg" alt="Blue Mosque">
+        <div class="card-body">
+          <h3>Blue Mosque</h3>
+          <p>Known for its stunning blue tiles and six minarets, this mosque is one of the most famous landmarks in Istanbul.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="bosphorus.jpg" alt="Bosphorus River">
+        <div class="card-body">
+          <h3>Bosphorus River</h3>
+          <p>A natural strait that connects the Black Sea to the Sea of Marmara, forming a boundary between Asia and Europe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
