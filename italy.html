@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discover Italy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      color: #333;
+      text-align: center;
+    }
+
+    .btn-checkout {
+      display: block;
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-checkout:hover {
+      background-color: #34495e;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .card-body p {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .card-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        width: 45%;
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .card {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header class="header">
+    <h1>Welcome to Italy</h1>
+    <p>Explore iconic landmarks and traditional foods</p>
+  <a href="italybudget.html" class="btn-checkout">Go to Checkout</a>
+  </header>
+
+  <section>
+    <h2>Traditional Italian Foods</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg" alt="Pizza">
+        <div class="card-body">
+          <h3>Pizza</h3>
+          <p>Classic Neapolitan pizza with fresh tomato sauce, mozzarella, and basil. Wood-fired to perfection.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="carbonara.jpg" alt="Carbonara">
+        <div class="card-body">
+          <h3>Pasta Carbonara</h3>
+          <p>Spaghetti tossed with eggs, pancetta, cheese, and pepper. A rich Roman favorite.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="arancini.jpg" alt="Arancini">
+        <div class="card-body">
+          <h3>Arancini</h3>
+          <p>Golden, crispy rice balls filled with meat ragù, peas, and melted mozzarella.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Famous Italian Landmarks</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="colosseum.jpg" alt="Colosseum">
+        <div class="card-body">
+          <h3>The Colosseum, Rome</h3>
+          <p>An iconic amphitheater where gladiators once battled. A marvel of Roman engineering.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="pisa.jpg" alt="Leaning Tower of Pisa">
+        <div class="card-body">
+          <h3>The Leaning Tower of Pisa</h3>
+          <p>This famous tilted tower defies gravity and is a symbol of Italian uniqueness.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="pantheon.jpg" alt="Pantheon Rome">
+        <div class="card-body">
+          <h3>The Pantheon, Rome</h3>
+          <p>An ancient temple with a massive dome and oculus, now a church filled with light.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="basilica.jpg" alt="St. Peter's Basilica">
+        <div class="card-body">
+          <h3>St. Peter's Basilica</h3>
+          <p>A stunning Renaissance masterpiece and one of the holiest places in Christianity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
