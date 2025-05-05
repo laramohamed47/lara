@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #winImage {
+            display: none; /* Initially hide the image */
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block; /* Centers the image horizontally */
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Number Game</h1>
+        <p>Guess a number between 1 and 100 (2 digits only)</p>
+        
+        <!-- Input field for the guess -->
+        <input type="text" id="guessInput" placeholder="Enter your guess">
+        
+        <!-- Button to submit the guess -->
+        <button onclick="checkGuess()">Submit Guess</button>
+        
+        <!-- Timer display -->
+        <p id="timer">Time remaining: 60s</p>
+        
+        <!-- Area where messages will be displayed (success or error) -->
+        <p id="message"></p>
+
+        <!-- Image that will appear when the user wins -->
+        <img id="winImage" src="trophy.gif" alt="Trophy" width="300">
+
+        <!-- Reset Button -->
+        <button onclick="resetGame()">Play Again</button>
+    </div>
+
+    <script>
+        let correctNumber; // The number the player has to guess
+        let timerInterval; // Timer interval reference
+        let timeRemaining; // Time left in the game
+        
+        // Function to generate a random number between 1 and 100
+        function generateRandomNumber() {
+            return Math.floor(Math.random() * 100) + 1;
+        }
+
+        // Function to start or restart the timer
+        function startTimer() {
+            timeRemaining = 60; // Reset time to 60 seconds
+            document.getElementById('timer').textContent = `Time remaining: ${timeRemaining}s`;
+
+            // Clear any existing timer intervals
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+
+            // Start a new timer
+            timerInterval = setInterval(function() {
+                timeRemaining--;
+                document.getElementById('timer').textContent = `Time remaining: ${timeRemaining}s`;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval); // Stop the timer
+                    document.getElementById('message').textContent = "Time's up! You lost!";
+                    document.getElementById('message').style.color = "red";
+                    document.getElementById('winImage').style.display = "none"; // Hide the image
+                }
+            }, 1000);
+        }
+
+        // Function to check the guess
+        function checkGuess() {
+            const userInput = document.getElementById('guessInput').value;
+            const messageElement = document.getElementById('message');
+            const winImage = document.getElementById('winImage'); // The image element
+
+            // Validate input length
+            if (userInput.length < 2 || userInput.length > 2 || isNaN(userInput)) {
+                messageElement.textContent = "Please enter a valid 2-digit number.";
+                messageElement.style.color = "red";
+                return;
+            }
+
+            const guess = Number(userInput);
+
+            if (guess === correctNumber) {
+                messageElement.textContent = "Congratulations! You guessed the correct number!";
+                messageElement.style.color = "green";
+                winImage.style.display = "block"; // Show the image
+
+                clearInterval(timerInterval); // Stop the timer
+            } else {
+                let hintMessage = "Incorrect guess. Try again! ";
+
+                if (guess < correctNumber) {
+                    hintMessage += "Try a higher number.";
+                } else {
+                    hintMessage += "Try a lower number.";
+                }
+
+                // Give a "warmer" hint if the guess is close to the correct number
+                const difference = Math.abs(correctNumber - guess);
+                if (difference <= 5) {
+                    hintMessage += " You're getting warmer!";
+                }
+
+                messageElement.textContent = hintMessage;
+                messageElement.style.color = "red";
+            }
+        }
+
+        // Function to reset the game
+        function resetGame() {
+            // Generate a new number for the game
+            correctNumber = generateRandomNumber();
+            document.getElementById('guessInput').value = ""; // Clear the input field
+            document.getElementById('message').textContent = ""; // Clear any messages
+            document.getElementById('winImage').style.display = "none"; // Hide the win image
+            startTimer(); // Restart the timer
+        }
+
+        // Initialize the game by generating a new number and starting the timer
+        function startGame() {
+            correctNumber = generateRandomNumber();
+            document.getElementById('winImage').style.display = "none"; // Ensure the image is hidden on game start
+            startTimer();
+        }
+
+        // Start the game when the page loads
+        startGame();
+    </script>
+</body>
+</html>
+
